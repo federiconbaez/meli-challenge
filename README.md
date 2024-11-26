@@ -55,7 +55,7 @@ log() {
 # Crear estructura de proyecto Python
 create_python_template() {
     local base_dir="$1"
-    local python_dir="$base_dir/meli-challenge-python"
+    local python_dir="$base_dir/meli_challenge_python"
 
     # Crear directorios
     mkdir -p "$python_dir/src" "$python_dir/tests"
@@ -65,18 +65,143 @@ create_python_template() {
 
     # Crear main.py
     cat > "$python_dir/src/main.py" << EOL
-def main():
-    """Main application entry point."""
-    print("Hello, Python Project!")
+# -----------------------------------------------------------------------------------------------------
+# @ Import Section
+# -----------------------------------------------------------------------------------------------------
+from typing import List
 
+# -----------------------------------------------------------------------------------------------------
+# @ Helper Function Section
+# -----------------------------------------------------------------------------------------------------
+def check_sequence(sequence: str) -> bool:
+    """
+    Checks if there is a sequence of four identical letters in a string.
+    
+    :param sequence: A string representing a sequence of DNA bases.
+    :return: True if a sequence of four identical letters is found, False otherwise.
+    """
+    return any(sequence[i] == sequence[i + 1] == sequence[i + 2] == sequence[i + 3] for i in range(len(sequence) - 3))
+
+# -----------------------------------------------------------------------------------------------------
+# @ Diagonal Extraction Section
+# -----------------------------------------------------------------------------------------------------
+def extract_diagonals(dna: List[str]) -> List[str]:
+    """
+    Extracts all diagonals (both from top-left to bottom-right and top-right to bottom-left) from the DNA matrix.
+    
+    :param dna: List of strings representing each row of an NxN DNA sequence table.
+    :return: List of strings representing all diagonals.
+    """
+    n = len(dna)
+    diagonals = []
+
+    # Top-left to bottom-right diagonals
+    for k in range(-(n-1), n):
+        diagonal = []
+        for i in range(n):
+            j = i - k
+            if 0 <= j < n:
+                diagonal.append(dna[i][j])
+        if len(diagonal) >= 4:
+            diagonals.append(''.join(diagonal))
+
+    # Top-right to bottom-left diagonals
+    for k in range(-(n-1), n):
+        diagonal = []
+        for i in range(n):
+            j = n - 1 - i - k
+            if 0 <= j < n:
+                diagonal.append(dna[i][j])
+        if len(diagonal) >= 4:
+            diagonals.append(''.join(diagonal))
+
+    return diagonals
+
+# -----------------------------------------------------------------------------------------------------
+# @ Main Function Section
+# -----------------------------------------------------------------------------------------------------
+def is_mutant(dna: List[str]) -> bool:
+    """
+    Determines if the given DNA sequence belongs to a mutant by looking for more than one sequence
+    of four identical letters in any direction (horizontal, vertical, diagonal).
+    
+    :param dna: List of strings representing each row of an NxN DNA sequence table.
+    :return: True if mutant, False otherwise.
+    """
+    # Error Handling
+    if not dna or not all(isinstance(row, str) for row in dna):
+        raise ValueError("DNA must be a list of strings.")
+    n = len(dna)
+    if any(len(row) != n for row in dna):
+        raise ValueError("DNA must be a square matrix of NxN.")
+    if any(char not in "ATCG" for row in dna for char in row):
+        raise ValueError("DNA can only contain characters A, T, C, G.")
+
+    sequences_found = 0
+
+    # Horizontal and Vertical Checks
+    for row in dna:
+        if check_sequence(row):
+            sequences_found += 1
+            if sequences_found > 1:
+                return True
+    
+    for col in range(n):
+        column_str = ''.join([dna[row][col] for row in range(n)])
+        if check_sequence(column_str):
+            sequences_found += 1
+            if sequences_found > 1:
+                return True
+
+    # Diagonal Check
+    diagonals = extract_diagonals(dna)
+    for diagonal in diagonals:
+        if check_sequence(diagonal):
+            sequences_found += 1
+            if sequences_found > 1:
+                return True
+
+    return False
+
+def main():
+    dna_sample = [
+        "ATGCGA",
+        "CAGTGC",
+        "TTATGT",
+        "AGAAGG",
+        "CCCCTA",
+        "TCACTG"
+    ]
+    print(is_mutant(dna_sample))  # Expected output: True
+
+# -----------------------------------------------------------------------------------------------------
+# @ Entry Point Section
+# -----------------------------------------------------------------------------------------------------
 if __name__ == "__main__":
-    main()
+    try:
+        dna_sample = [
+            "ATGCGA",
+            "CAGTGC",
+            "TTATGT",
+            "AGAAGG",
+            "CCCCTA",
+            "TCACTG"
+        ]
+        
+        print(is_mutant(dna_sample))  # Expected output: True
+    except ValueError as e:
+        print(f"Input Error: {e}")
 EOL
 
     # Crear test_main.py
     cat > "$python_dir/tests/test_main.py" << EOL
 import pytest
-from src.main import main
+import pytest
+import sys
+import os
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '../src')))
+from main import main
+from main import is_mutant
 
 def test_main():
     """Simple test to ensure main function runs without error."""
@@ -84,6 +209,63 @@ def test_main():
         main()
     except Exception as e:
         pytest.fail(f"main() raised {type(e).__name__} unexpectedly!")
+
+def test_is_mutant_with_mutant_dna():
+    dna_sample = [
+        "ATGCGA",
+        "CAGTGC",
+        "TTATGT",
+        "AGAAGG",
+        "CCCCTA",
+        "TCACTG"
+    ]
+    assert is_mutant(dna_sample) == True
+
+def test_is_mutant_with_non_mutant_dna():
+    dna_sample = [
+        "ATGCGA",
+        "CAGTGC",
+        "TTATTT",
+        "AGACGG",
+        "GCGTCA",
+        "TCACTG"
+    ]
+    assert is_mutant(dna_sample) == False
+
+def test_is_mutant_with_invalid_dna_non_square():
+    dna_sample = [
+        "ATGCGA",
+        "CAGTGC",
+        "TTATGT",
+        "AGAAGG",
+        "CCCCTA"
+    ]
+    with pytest.raises(ValueError, match="DNA must be a square matrix of NxN."):
+        is_mutant(dna_sample)
+
+def test_is_mutant_with_invalid_dna_non_string():
+    dna_sample = [
+        "ATGCGA",
+        "CAGTGC",
+        "TTATGT",
+        123456,
+        "CCCCTA",
+        "TCACTG"
+    ]
+    with pytest.raises(ValueError, match="DNA must be a list of strings."):
+        is_mutant(dna_sample)
+
+def test_is_mutant_with_invalid_dna_invalid_characters():
+    dna_sample = [
+        "ATGCGA",
+        "CAGTGC",
+        "TTATGT",
+        "AGAAGG",
+        "CCCXTA",
+        "TCACTG"
+    ]
+    with pytest.raises(ValueError, match="DNA can only contain characters A, T, C, G."):
+        is_mutant(dna_sample)
 EOL
 
     # Crear requirements.txt
@@ -115,40 +297,125 @@ EOL
 # Crear estructura de proyecto Java
 create_java_template() {
     local base_dir="$1"
-    local java_dir="$base_dir/meli-challenge-java"
+    local java_dir="$base_dir/meli_challenge_java"
 
     # Crear directorios
-    mkdir -p "$java_dir/src/main/java/com/example" \
+    mkdir -p "$java_dir/src/main/java/com/mercadolibre" \
              "$java_dir/src/main/resources" \
-             "$java_dir/src/test/java/com/example"
+             "$java_dir/src/test/java/com/mercadolibre"
 
-    # Crear App.java
-    cat > "$java_dir/src/main/java/com/example/App.java" << EOL
-package com.example;
+    # Crear MutantDetector.java
+    cat > "$java_dir/src/main/java/com/mercadolibre/MutantDetector.java" << EOL
+package com.mercadolibre;
 
-public class App {
-    public static void main(String[] args) {
-        System.out.println("Hello, Java Project!");
+public class MutantDetector {
+
+    private String[] dna;
+    private int size;
+
+    public MutantDetector(String[] dna) {
+        this.dna = dna;
+        this.size = dna.length;
     }
 
-    public String greet() {
-        return "Hello, World!";
+    public boolean isMutant() {
+        int sequencesFound = 0;
+
+        for (int i = 0; i < size; i++) {
+            for (int j = 0; j < size; j++) {
+                if (checkSequence(i, j, 0, 1) ||  // Horizontal
+                    checkSequence(i, j, 1, 0) ||  // Vertical
+                    checkSequence(i, j, 1, 1) ||  // Diagonal hacia abajo a la derecha
+                    checkSequence(i, j, 1, -1)) { // Diagonal hacia abajo a la izquierda
+                    sequencesFound++;
+                    if (sequencesFound > 1) {
+                        return true;
+                    }
+                }
+            }
+        }
+        return false;
+    }
+
+    private boolean checkSequence(int row, int col, int dx, int dy) {
+        if (row + 3 * dx >= size || row + 3 * dx < 0 || col + 3 * dy >= size || col + 3 * dy < 0) {
+            return false;
+        }
+
+        char letter = dna[row].charAt(col);
+        for (int i = 1; i < 4; i++) {
+            if (dna[row + i * dx].charAt(col + i * dy) != letter) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public static void main(String[] args) {
+        String[] adn = {
+            "ATGCGA",
+            "CAGTGC",
+            "TTATGT",
+            "AGAAGG",
+            "CCCCTA",
+            "TCACTG"
+        };
+        MutantDetector detector = new MutantDetector(adn);
+        boolean esMutante = detector.isMutant();
+        System.out.println("¿Es mutante? " + esMutante);
     }
 }
 EOL
 
-    # Crear AppTest.java
-    cat > "$java_dir/src/test/java/com/example/AppTest.java" << EOL
-package com.example;
+    # Crear MutantDetectorTest.java
+    cat > "$java_dir/src/test/java/com/mercadolibre/MutantDetectorTest.java" << EOL
+package com.mercadolibre;
 
-import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.Test;
 
-public class AppTest {
+public class MutantDetectorTest {
+
     @Test
-    public void testGreet() {
-        App app = new App();
-        assertEquals("Hello, World!", app.greet());
+    public void testIsMutantWithMutantDNA() {
+        String[] dna = {
+            "ATGCGA",
+            "CAGTGC",
+            "TTATGT",
+            "AGAAGG",
+            "CCCCTA",
+            "TCACTG"
+        };
+        MutantDetector detector = new MutantDetector(dna);
+        assertTrue(detector.isMutant(), "The DNA should be identified as mutant");
+    }
+
+    @Test
+    public void testIsMutantWithNonMutantDNA() {
+        String[] dna = {
+            "ATGCGA",
+            "CAGTGC",
+            "TTATTT",
+            "AGACGG",
+            "GCGTCA",
+            "TCACTG"
+        };
+        MutantDetector detector = new MutantDetector(dna);
+        assertFalse(detector.isMutant(), "The DNA should not be identified as mutant");
+    }
+
+    @Test
+    public void testIsMutantWithEmptyDNA() {
+        String[] dna = {};
+        MutantDetector detector = new MutantDetector(dna);
+        assertFalse(detector.isMutant(), "Empty DNA should not be identified as mutant");
+    }
+
+    @Test
+    public void testIsMutantWithSingleElementDNA() {
+        String[] dna = {"A"};
+        MutantDetector detector = new MutantDetector(dna);
+        assertFalse(detector.isMutant(), "Single element DNA should not be identified as mutant");
     }
 }
 EOL
@@ -161,8 +428,8 @@ EOL
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.example</groupId>
-    <artifactId>my-java-project</artifactId>
+    <groupId>com.mercadolibre</groupId>
+    <artifactId>meli_challenge_java</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <properties>
@@ -267,7 +534,7 @@ RUN mvn clean package -DskipTests
 EXPOSE 8080
 
 # Run the jar file
-ENTRYPOINT ["java", "-jar", "/app/target/my-java-project-1.0-SNAPSHOT.jar"]
+ENTRYPOINT ["java", "-jar", "/app/target/meli_challenge_java-1.0-SNAPSHOT.jar"]
 EOL
 
     log "SUCCESS" "Dockerfiles created"
@@ -381,10 +648,10 @@ main() {
 
     # Crear directorios base
     mkdir -p "$base_dir/scripts" \
-             "$base_dir/meli-challenge-python/src" \
-             "$base_dir/meli-challenge-python/tests" \
-             "$base_dir/meli-challenge-java/src/main/java/com/example" \
-             "$base_dir/meli-challenge-java/src/test/java/com/example" \
+             "$base_dir/meli_challenge_python/src" \
+             "$base_dir/meli_challenge_python/tests" \
+             "$base_dir/meli_challenge_java/src/main/java/com/mercadolibre" \
+             "$base_dir/meli_challenge_java/src/test/java/com/mercadolibre" \
              "$base_dir/docker" \
              "$base_dir/docs"
 

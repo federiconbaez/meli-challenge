@@ -18,4 +18,4 @@ RUN mvn clean package -DskipTests
 EXPOSE 8080
 
 # Run the jar file
-ENTRYPOINT ["java", "-jar", "/app/target/my-java-project-1.0-SNAPSHOT.jar"]
+ENTRYPOINT ["java", "-jar", "/app/target/meli_challenge_java-1.0-SNAPSHOT.jar"]
