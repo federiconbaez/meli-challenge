@@ -118,7 +118,7 @@ run_python_tests() {
 # Función principal de configuración de Python
 setup_python_project() {
     local repo_url="${1:-}"
-    local project_name="${2:-meli-challenge-python}"
+    local project_name="${2:-meli_challenge_python}"
     local base_dir="$(cd "$(dirname "$0")/.." && pwd)"
     local project_dir="$base_dir/$project_name"
 

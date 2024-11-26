@@ -67,7 +67,7 @@ run_java_tests() {
 # Función principal de configuración de Java
 setup_java_project() {
     local repo_url="${1:-}"
-    local project_name="${2:-meli-challenge-java}"
+    local project_name="${2:-meli_challenge_java}"
     local base_dir="$(cd "$(dirname "$0")" && pwd)"
     local project_dir="$base_dir/$project_name"
 
