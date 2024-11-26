@@ -1,0 +1,186 @@
+2024-11-26 13:54:24,559 - INFO: Mutant Detection API starting up
+2024-11-26 13:54:24,578 - INFO: Database initialized successfully
+2024-11-26 13:54:24,580 - WARNING:  * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+2024-11-26 13:54:24,580 - INFO:  * Running on http://192.168.0.13:5000/ (Press CTRL+C to quit)
+2024-11-26 13:55:45,132 - INFO: Mutant Detection API starting up
+2024-11-26 13:55:45,133 - INFO: Database initialized successfully
+2024-11-26 13:55:45,135 - WARNING:  * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+2024-11-26 13:55:45,135 - INFO:  * Running on http://192.168.0.13:5000/ (Press CTRL+C to quit)
+2024-11-26 13:56:31,108 - INFO: Application started successfully, listening on port 5000
+2024-11-26 13:56:31,509 - INFO: Mutant Detection API starting up
+2024-11-26 13:56:31,511 - INFO: Database initialized successfully
+2024-11-26 13:56:31,513 - WARNING:  * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+2024-11-26 13:56:31,513 - INFO:  * Running on http://192.168.0.13:5000/ (Press CTRL+C to quit)
+2024-11-26 13:56:45,359 - INFO: Stats retrieved - Mutant: 0, Human: 0
+2024-11-26 13:56:45,360 - INFO: 127.0.0.1 - - [26/Nov/2024 13:56:45] "GET /stats HTTP/1.1" 200 -
+2024-11-26 13:57:01,555 - INFO: Application started successfully, listening on port 5000
+2024-11-26 13:57:01,555 - INFO: Endpoint: mutant, URL: /mutant/
+2024-11-26 13:57:01,555 - INFO: Endpoint: stats, URL: /stats
+2024-11-26 13:57:01,555 - INFO: Endpoint: static, URL: /static/<path:filename>
+2024-11-26 13:57:03,267 - INFO: Mutant Detection API starting up
+2024-11-26 13:57:03,268 - INFO: Database initialized successfully
+2024-11-26 13:57:03,275 - WARNING:  * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+2024-11-26 13:57:03,275 - INFO:  * Running on http://192.168.0.13:5000/ (Press CTRL+C to quit)
+2024-11-26 13:57:03,276 - INFO:  * Restarting with stat
+2024-11-26 13:57:03,449 - INFO: Mutant Detection API starting up
+2024-11-26 13:57:03,451 - INFO: Database initialized successfully
+2024-11-26 13:57:03,455 - WARNING:  * Debugger is active!
+2024-11-26 13:57:03,457 - INFO:  * Debugger PIN: 106-867-836
+2024-11-26 13:57:06,850 - INFO: Stats retrieved - Mutant: 0, Human: 0
+2024-11-26 13:57:06,852 - INFO: 127.0.0.1 - - [26/Nov/2024 13:57:06] "GET /stats HTTP/1.1" 200 -
+2024-11-26 13:57:09,393 - INFO: Stats retrieved - Mutant: 0, Human: 0
+2024-11-26 13:57:09,394 - INFO: 127.0.0.1 - - [26/Nov/2024 13:57:09] "GET /stats HTTP/1.1" 200 -
+2024-11-26 13:57:11,589 - INFO: Stats retrieved - Mutant: 0, Human: 0
+2024-11-26 13:57:11,590 - INFO: 127.0.0.1 - - [26/Nov/2024 13:57:11] "GET /stats HTTP/1.1" 200 -
+2024-11-26 14:07:14,174 - INFO:  * Detected change in '/media/fbaez/a8a5e0ff-fc73-407a-8213-5b5b2969ea29/home/fbaez/Work/all/q/meli-challenge/meli_challenge_python/src/api.py', reloading
+2024-11-26 14:07:14,204 - INFO:  * Restarting with stat
+2024-11-26 14:07:14,391 - INFO: Mutant Detection API starting up
+2024-11-26 14:07:14,394 - INFO: Database initialized successfully
+2024-11-26 14:07:14,403 - WARNING:  * Debugger is active!
+2024-11-26 14:07:14,405 - INFO:  * Debugger PIN: 106-867-836
+2024-11-26 14:07:20,024 - INFO: Application started successfully, listening on port 5000
+2024-11-26 14:07:20,024 - INFO: Endpoint: mutant, URL: /mutant/
+2024-11-26 14:07:20,024 - INFO: Endpoint: stats, URL: /stats
+2024-11-26 14:07:20,024 - INFO: Endpoint: static, URL: /static/<path:filename>
+2024-11-26 14:07:20,087 - INFO: Application started successfully, listening on port 5000
+2024-11-26 14:07:20,087 - INFO: Endpoint: mutant, URL: /mutant/
+2024-11-26 14:07:20,087 - INFO: Endpoint: stats, URL: /stats
+2024-11-26 14:07:20,088 - INFO: Endpoint: static, URL: /static/<path:filename>
+2024-11-26 14:07:20,373 - INFO: Mutant Detection API starting up
+2024-11-26 14:07:20,374 - INFO: Database initialized successfully
+2024-11-26 14:07:20,379 - WARNING:  * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+2024-11-26 14:07:20,380 - INFO:  * Running on http://192.168.0.13:5000/ (Press CTRL+C to quit)
+2024-11-26 14:07:20,380 - INFO:  * Restarting with stat
+2024-11-26 14:07:20,557 - INFO: Mutant Detection API starting up
+2024-11-26 14:07:20,558 - INFO: Database initialized successfully
+2024-11-26 14:07:20,562 - WARNING:  * Debugger is active!
+2024-11-26 14:07:20,564 - INFO:  * Debugger PIN: 106-867-836
+2024-11-26 14:10:02,034 - INFO:  * Detected change in '/media/fbaez/a8a5e0ff-fc73-407a-8213-5b5b2969ea29/home/fbaez/Work/all/q/meli-challenge/meli_challenge_python/src/api.py', reloading
+2024-11-26 14:10:02,113 - INFO:  * Restarting with stat
+2024-11-26 14:10:02,311 - INFO: Mutant Detection API starting up
+2024-11-26 14:10:02,313 - INFO: Database initialized successfully
+2024-11-26 14:10:02,317 - WARNING:  * Debugger is active!
+2024-11-26 14:10:02,319 - INFO:  * Debugger PIN: 106-867-836
+2024-11-26 14:13:26,069 - INFO: Application started successfully, listening on port 5000
+2024-11-26 14:13:26,069 - INFO: Endpoint: mutant, URL: /mutant/
+2024-11-26 14:13:26,069 - INFO: Endpoint: stats, URL: /stats
+2024-11-26 14:13:26,069 - INFO: Endpoint: static, URL: /static/<path:filename>
+2024-11-26 14:13:34,607 - INFO: Mutant Detection API starting up
+2024-11-26 14:13:34,608 - INFO: Database initialized successfully
+2024-11-26 14:13:34,614 - WARNING:  * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+2024-11-26 14:13:34,614 - INFO:  * Running on http://192.168.0.13:5000/ (Press CTRL+C to quit)
+2024-11-26 14:13:34,614 - INFO:  * Restarting with stat
+2024-11-26 14:13:34,791 - INFO: Mutant Detection API starting up
+2024-11-26 14:13:34,792 - INFO: Database initialized successfully
+2024-11-26 14:13:34,797 - WARNING:  * Debugger is active!
+2024-11-26 14:13:34,799 - INFO:  * Debugger PIN: 106-867-836
+2024-11-26 14:14:48,351 - INFO: Mutant Detection API starting up
+2024-11-26 14:14:48,354 - INFO: Database initialized successfully
+2024-11-26 14:14:48,363 - WARNING:  * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+2024-11-26 14:14:48,364 - INFO:  * Running on http://192.168.0.13:5000/ (Press CTRL+C to quit)
+2024-11-26 14:14:48,367 - INFO:  * Restarting with stat
+2024-11-26 14:14:48,590 - INFO: Mutant Detection API starting up
+2024-11-26 14:14:48,592 - INFO: Database initialized successfully
+2024-11-26 14:14:48,597 - WARNING:  * Debugger is active!
+2024-11-26 14:14:48,600 - INFO:  * Debugger PIN: 106-867-836
+2024-11-26 14:15:11,677 - INFO:  * Detected change in '/media/fbaez/a8a5e0ff-fc73-407a-8213-5b5b2969ea29/home/fbaez/Work/all/q/meli-challenge/meli_challenge_python/src/api.py', reloading
+2024-11-26 14:15:11,733 - INFO:  * Restarting with stat
+2024-11-26 14:15:11,951 - INFO: Mutant Detection API starting up
+2024-11-26 14:15:11,953 - INFO: Database initialized successfully
+2024-11-26 14:15:11,957 - WARNING:  * Debugger is active!
+2024-11-26 14:15:11,960 - INFO:  * Debugger PIN: 106-867-836
+2024-11-26 14:15:35,052 - INFO: Mutant Detection API starting up
+2024-11-26 14:15:35,054 - INFO: Database initialized successfully
+2024-11-26 14:15:35,059 - WARNING:  * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+2024-11-26 14:15:35,059 - INFO:  * Running on http://192.168.0.13:5000/ (Press CTRL+C to quit)
+2024-11-26 14:15:35,060 - INFO:  * Restarting with stat
+2024-11-26 14:15:35,241 - INFO: Mutant Detection API starting up
+2024-11-26 14:15:35,242 - INFO: Database initialized successfully
+2024-11-26 14:15:35,246 - WARNING:  * Debugger is active!
+2024-11-26 14:15:35,248 - INFO:  * Debugger PIN: 106-867-836
+2024-11-26 14:15:45,013 - INFO: Stats retrieved - Mutant: 0, Human: 0
+2024-11-26 14:15:45,015 - INFO: 127.0.0.1 - - [26/Nov/2024 14:15:45] "GET /stats HTTP/1.1" 200 -
+2024-11-26 14:15:47,476 - INFO: Stats retrieved - Mutant: 0, Human: 0
+2024-11-26 14:15:47,477 - INFO: 127.0.0.1 - - [26/Nov/2024 14:15:47] "GET /stats HTTP/1.1" 200 -
+2024-11-26 14:16:02,345 - INFO:  * Detected change in '/media/fbaez/a8a5e0ff-fc73-407a-8213-5b5b2969ea29/home/fbaez/Work/all/q/meli-challenge/meli_challenge_python/src/api.py', reloading
+2024-11-26 14:16:02,483 - INFO:  * Restarting with stat
+2024-11-26 14:16:02,707 - INFO: Mutant Detection API starting up
+2024-11-26 14:16:02,710 - INFO: Database initialized successfully
+2024-11-26 14:16:02,718 - WARNING:  * Debugger is active!
+2024-11-26 14:16:02,722 - INFO:  * Debugger PIN: 106-867-836
+2024-11-26 14:16:03,771 - INFO: Stats retrieved - Mutant: 0, Human: 0
+2024-11-26 14:16:03,772 - INFO: 127.0.0.1 - - [26/Nov/2024 14:16:03] "GET /stats HTTP/1.1" 200 -
+2024-11-26 14:16:06,630 - INFO: Mutant Detection API starting up
+2024-11-26 14:16:06,631 - INFO: Database initialized successfully
+2024-11-26 14:16:06,638 - WARNING:  * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+2024-11-26 14:16:06,638 - INFO:  * Running on http://192.168.0.13:5000/ (Press CTRL+C to quit)
+2024-11-26 14:16:06,639 - INFO:  * Restarting with stat
+2024-11-26 14:16:06,810 - INFO: Mutant Detection API starting up
+2024-11-26 14:16:06,812 - INFO: Database initialized successfully
+2024-11-26 14:16:06,816 - WARNING:  * Debugger is active!
+2024-11-26 14:16:06,818 - INFO:  * Debugger PIN: 106-867-836
+2024-11-26 14:16:17,859 - INFO:  * Detected change in '/media/fbaez/a8a5e0ff-fc73-407a-8213-5b5b2969ea29/home/fbaez/Work/all/q/meli-challenge/meli_challenge_python/src/api.py', reloading
+2024-11-26 14:16:17,917 - INFO:  * Restarting with stat
+2024-11-26 14:16:18,178 - INFO: Mutant Detection API starting up
+2024-11-26 14:16:18,180 - INFO: Database initialized successfully
+2024-11-26 14:16:18,193 - WARNING:  * Debugger is active!
+2024-11-26 14:16:18,196 - INFO:  * Debugger PIN: 106-867-836
+2024-11-26 14:16:20,503 - INFO: Stats retrieved - Mutant: 0, Human: 0
+2024-11-26 14:16:20,504 - INFO: 127.0.0.1 - - [26/Nov/2024 14:16:20] "GET /stats HTTP/1.1" 200 -
+2024-11-26 14:16:33,258 - INFO: Mutant Detection API starting up
+2024-11-26 14:16:33,259 - INFO: Database initialized successfully
+2024-11-26 14:16:33,265 - WARNING:  * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+2024-11-26 14:16:33,265 - INFO:  * Running on http://192.168.0.13:5000/ (Press CTRL+C to quit)
+2024-11-26 14:16:33,265 - INFO:  * Restarting with stat
+2024-11-26 14:16:33,443 - INFO: Mutant Detection API starting up
+2024-11-26 14:16:33,445 - INFO: Database initialized successfully
+2024-11-26 14:16:33,450 - WARNING:  * Debugger is active!
+2024-11-26 14:16:33,452 - INFO:  * Debugger PIN: 106-867-836
+2024-11-26 14:16:35,029 - INFO: Stats retrieved - Mutant: 0, Human: 0
+2024-11-26 14:16:35,031 - INFO: 127.0.0.1 - - [26/Nov/2024 14:16:35] "GET /stats HTTP/1.1" 200 -
+2024-11-26 14:17:06,577 - INFO:  * Detected change in '/media/fbaez/a8a5e0ff-fc73-407a-8213-5b5b2969ea29/home/fbaez/Work/all/q/meli-challenge/meli_challenge_python/src/api.py', reloading
+2024-11-26 14:17:06,649 - INFO:  * Restarting with stat
+2024-11-26 14:17:06,903 - INFO: Mutant Detection API starting up
+2024-11-26 14:17:06,906 - INFO: Database initialized successfully
+2024-11-26 14:17:06,915 - WARNING:  * Debugger is active!
+2024-11-26 14:17:06,917 - INFO:  * Debugger PIN: 106-867-836
+2024-11-26 14:17:08,700 - INFO: Mutant Detection API starting up
+2024-11-26 14:17:08,701 - INFO: Database initialized successfully
+2024-11-26 14:17:08,707 - WARNING:  * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+2024-11-26 14:17:08,707 - INFO:  * Running on http://192.168.0.13:5000/ (Press CTRL+C to quit)
+2024-11-26 14:17:08,708 - INFO:  * Restarting with stat
+2024-11-26 14:17:08,904 - INFO: Mutant Detection API starting up
+2024-11-26 14:17:08,906 - INFO: Database initialized successfully
+2024-11-26 14:17:08,910 - WARNING:  * Debugger is active!
+2024-11-26 14:17:08,912 - INFO:  * Debugger PIN: 106-867-836
+2024-11-26 14:17:29,681 - INFO: Mutant Detection API starting up
+2024-11-26 14:17:29,683 - INFO: Database initialized successfully
+2024-11-26 14:17:29,689 - WARNING:  * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+2024-11-26 14:17:29,689 - INFO:  * Running on http://192.168.0.13:5000/ (Press CTRL+C to quit)
+2024-11-26 14:17:29,690 - INFO:  * Restarting with stat
+2024-11-26 14:17:29,932 - INFO: Mutant Detection API starting up
+2024-11-26 14:17:29,933 - INFO: Database initialized successfully
+2024-11-26 14:17:29,937 - WARNING:  * Debugger is active!
+2024-11-26 14:17:29,939 - INFO:  * Debugger PIN: 106-867-836
+2024-11-26 14:19:24,989 - INFO: Mutant Detection API starting up
+2024-11-26 14:19:24,991 - INFO: Database initialized successfully
+2024-11-26 14:19:24,996 - WARNING:  * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+2024-11-26 14:19:24,996 - INFO:  * Running on http://192.168.0.13:5000/ (Press CTRL+C to quit)
+2024-11-26 14:19:24,997 - INFO:  * Restarting with stat
+2024-11-26 14:19:25,213 - INFO: Mutant Detection API starting up
+2024-11-26 14:19:25,215 - INFO: Database initialized successfully
+2024-11-26 14:19:25,219 - WARNING:  * Debugger is active!
+2024-11-26 14:19:25,221 - INFO:  * Debugger PIN: 106-867-836

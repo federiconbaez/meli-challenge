@@ -1,0 +1,5 @@
+{
+    "python.analysis.extraPaths": [
+        "./meli_challenge_python/src"
+    ]
+}
