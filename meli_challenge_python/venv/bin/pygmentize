@@ -1,0 +1,10 @@
+#!/bin/sh
+'''exec' /media/fbaez/a8a5e0ff-fc73-407a-8213-5b5b2969ea29/home/fbaez/Work/all/q/meli-challenge/meli_challenge_python/venv/bin/python3 "$0" "$@"
+' '''
+# -*- coding: utf-8 -*-
+import re
+import sys
+from pygments.cmdline import main
+if __name__ == '__main__':
+    sys.argv[0] = re.sub(r'(-script\.pyw|\.exe)?$', '', sys.argv[0])
+    sys.exit(main())
